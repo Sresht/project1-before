@@ -4,6 +4,7 @@ from tweepy import API
 from tweepy import Cursor
 from datetime import datetime, date, time, timedelta
 from collections import Counter
+import random
 import sys
 import os
 
@@ -20,8 +21,27 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
+    
+    dessertList = ["cookies", "cake", "ice cream", "apple pie", "brownies", "cupcakes", "smores"]
+    randomDessert = random.choice(dessertList)
+    searchTweet = Cursor(api.search,
+              q=randomDessert,
+              lang="en"
+              ).items(1)
+    for tweet in searchTweet:
+        text = tweet.text
+        screen_name = tweet.author.screen_name
+        created_at = tweet.created_at
+    
     return render_template(
-        "index.html"
+        "index.html",
+        dessertList = dessertList,
+        randomDessert = randomDessert,
+        searchTweet = searchTweet,
+        tweet = tweet,
+        text = text,
+        screen_name = screen_name,
+        created_at = created_at
         )
 
 app.run(

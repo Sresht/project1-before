@@ -13,29 +13,58 @@ INTRODUCTION
 
 Created and maintained by Jason Eccles jme5@njit.edu
 
-Twittsplay is an app that searches for a Tweet based on a randomly generated dessert. Twittsplay will display the dessert, the quote, the user, the date, and time.
-On reload, Twittsplay will search for a new dessert and display a new Tweet!
+Twittsplay is an app that searches for a Tweet based on a randomly generated dessert and a recipe of that dessert. Twittsplay will display the dessert, the quote, the user, the date, and time. Twittsplay will also display the recipe title, prep time, ingredients, and a link to the recipe page. Clicking "Get a new dessert!", Twittsplay will search for a new dessert and display a new Tweet and recipe!
 
 
 INSTALLATION
 ------------
 
+**In order to get started please clone the repository by using: `git clone https://github.com/NJIT-CS490/project1-jme5`**
+
+
 1. This app requires Flask 
-  * pip install flask
+  * `pip install flask`
   * https://flask.palletsprojects.com/en/1.1.x/
   
 2. This app requires Tweepy
- * pip install tweepy
+ * `pip install tweepy`
  * https://www.tweepy.org/
  
-3. This app uses the Twitter API and requires API keys
+3. This app requires dotenv
+ * `pip install python-dotenv`
+ * https://pypi.org/project/python-dotenv/ 
+ 
+4. This app uses the Twitter API and requires API keys
  * https://developer.twitter.com/en
- * Environmeny Variables
+ * Environment Variables
    * CONSUMER_KEY
    * CONSUMER_SECRET
    * ACCESS_KEY
    * ACCESS_SECRET
-   
+
+5. This app uses the Spoonacacular API and requires an API key with Rapid API
+ * https://rapidapi.com/spoonacular/api/recipe-food-nutrition
+ * Environment Variables
+   * SPOON_KEY
+  
+  
+**Once steps 1-5 have been completed, start the app by running: `python app.py`**
+
+
+6. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
+
+7. This app can be hosted on Heroku for FREE, in order to deploy on Heroku
+ * Sign up for heroku at https://www.heroku.com/
+ * Follow these steps for deployment:
+   * `heroku login -i`
+   * `heroku create`
+   * `git push heroku master`
+* Navigate to your newly created Heroku site.
+  * Add secret keys from development.env by going to https://dashboard.heroku.com/apps
+  * Click into your app > Settings > Config Vars > Reveal Config Vars > Add key value pairs for each variable.
+  * Configure requirements.txt with all requirements needed to run your app.
+  * Configure Procfile with the command needed to run your app.
+    
    
 TECHNICAL ISSUES
 ----------------

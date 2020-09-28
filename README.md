@@ -101,6 +101,6 @@ IMPROVEMENTS
 
 1. Add more HTML and CSS for design
 
-2. Add a button to refresh the page
+2. [x] Add a button to refresh the page
 
 3. Add a link to the direct tweet

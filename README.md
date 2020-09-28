@@ -53,14 +53,14 @@ INSTALLATION
 7. This app can be hosted on Heroku for FREE, in order to deploy on Heroku
  * Sign up for heroku at https://www.heroku.com/
  * Follow these steps for deployment:
-  * heroku login -i
-  * heroku create
-  * git push heroku master
+   * heroku login -i
+   * heroku create
+   * git push heroku master
 * Navigate to your newly created Heroku site.
- * Add secret keys from development.env by going to https://dashboard.heroku.com/apps
- * Click into your app > Settings > Config Vars > Reveal Config Vars > Add key value pairs for each variable.
- * Configure requirements.txt with all requirements needed to run your app.
- * Configure Procfile with the command needed to run your app.
+  * Add secret keys from development.env by going to https://dashboard.heroku.com/apps
+  * Click into your app > Settings > Config Vars > Reveal Config Vars > Add key value pairs for each variable.
+  * Configure requirements.txt with all requirements needed to run your app.
+  * Configure Procfile with the command needed to run your app.
     
    
 TECHNICAL ISSUES

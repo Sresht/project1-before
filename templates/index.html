@@ -12,37 +12,38 @@
 
 <body>
     <div class="center">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="card-header">
-                Random Dessert Chosen: "{{randomDessert}}"
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{text}}</h5>
-                <p class="card-text">Tweeted by @{{screen_name}} at {{created_at}}</p>
-                <button class="btn btn-primary" onClick="window.location.reload();">Get a new dessert!</button>
-            </div>
-            <div class="card-footer text-muted">
-
-            </div>
+    <div class="card mb-3" style="max-width: 1000px;">
+        <div class="card-header">
+            Random Dessert Chosen: "{{randomDessert}}"
         </div>
-
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src={{rec_image}} class="card-img" alt="img">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{rec_title}}</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Prep Time: {{rec_prep_time}} minutes <a
-                                    href={{rec_url}}>Click here for {{rec_title}}</a></small></p>
-                    </div>
+        <div class="card-body">
+            <h5 class="card-title">{{text}}</h5>
+            <p class="card-text">Tweeted by @{{screen_name}} at {{created_at}}</p>
+            <button class="btn btn-primary" onClick="window.location.reload();">Get a new dessert!</button>
+        </div>
+        <div class="card-footer text-muted">
+            <p class="card-text"><small class="text-muted">Prep Time: {{rec_prep_time}} minutes <a
+                        href={{rec_url}}>Click here for {{rec_title}}</a></small></p>
+        </div>
+    </div>
+    <div class="card mb-3" style="max-width: 1000px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src={{rec_image}} class="card-img" alt="img">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{rec_title}}</h5>
+                        {% for ing in ing_data %}
+                    <p class="card-text"><ul>{{ing["amount"]["us"]["value"]}} {{ing["amount"]["us"]["unit"]}}
+                        {{ing["name"]}}</ul></p>
+                        {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    </div>
+
 </body>
 
 </html>

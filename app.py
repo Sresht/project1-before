@@ -98,6 +98,7 @@ def index():
         ing_amount_unit=ing_amount_unit,
         ing_amount_value=ing_amount_value,
         ing_len=ing_len,
+        ing_data=ing_data["ingredients"]
         )
 
 app.run(

@@ -21,6 +21,7 @@ INSTALLATION
 
 **In order to get started please clone the repository by using: git clone https://github.com/NJIT-CS490/project1-jme5**
 
+
 1. This app requires Flask 
   * pip install flask
   * https://flask.palletsprojects.com/en/1.1.x/
@@ -46,7 +47,9 @@ INSTALLATION
  * Environment Variables
   * SPOON_KEY
   
+  
 **Once steps 1-5 have been completed, start the app by running: python app.py**
+
 
 6. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
 

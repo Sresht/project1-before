@@ -43,11 +43,29 @@ def index():
     randomDessert = random.choice(dessertList)
     
     
-    #Spoonacular info
-    url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search"
-    querystring = {"query":"cookies"}
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    data=response.json()
+    #Spoonacular search info
+    search_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search"
+    querystring = {"query":"cookies", "number":1}
+    search_response = requests.request("GET", search_url, headers=headers, params=querystring)
+    search_data=search_response.json()
+    for rec in search_data["results"]:
+        rec_id=rec["id"]
+        rec_title=rec["title"]
+        rec_servings=rec["servings"]
+        rec_prep_time=rec["readyInMinutes"]
+        rec_image=rec["image"]
+        rec_url=rec["sourceUrl"]
+        #print(ing_id, ing_title, ing_servings, ing_prep_time, ing_url, ing_image)
+    
+    #Spoonacular ingredients by id info
+    ing_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/"+str(rec_id)+"/ingredientWidget.json"
+    ing_response = requests.request("GET", ing_url, headers=headers)
+    ing_data=ing_response.json()
+    for ing in ing_data["ingredients"]:
+        ing_name = ing["name"]
+        ing_amount_value = ing["amount"]["us"]["value"]
+        ing_amount_unit = ing["amount"]["us"]["unit"]
+        #print(ing_name, ing_amount_unit, ing_amount_value)
     
     
     #tweepy info

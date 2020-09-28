@@ -19,19 +19,19 @@ Twittsplay is an app that searches for a Tweet based on a randomly generated des
 INSTALLATION
 ------------
 
-**In order to get started please clone the repository by using: git clone https://github.com/NJIT-CS490/project1-jme5**
+**In order to get started please clone the repository by using: `git clone https://github.com/NJIT-CS490/project1-jme5`**
 
 
 1. This app requires Flask 
-  * pip install flask
+  * `pip install flask`
   * https://flask.palletsprojects.com/en/1.1.x/
   
 2. This app requires Tweepy
- * pip install tweepy
+ * `pip install tweepy`
  * https://www.tweepy.org/
  
 3. This app requires dotenv
- * pip install python-dotenv
+ * `pip install python-dotenv`
  * https://pypi.org/project/python-dotenv/ 
  
 4. This app uses the Twitter API and requires API keys
@@ -48,7 +48,7 @@ INSTALLATION
   * SPOON_KEY
   
   
-**Once steps 1-5 have been completed, start the app by running: python app.py**
+**Once steps 1-5 have been completed, start the app by running: `python app.py`**
 
 
 6. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
@@ -56,9 +56,9 @@ INSTALLATION
 7. This app can be hosted on Heroku for FREE, in order to deploy on Heroku
  * Sign up for heroku at https://www.heroku.com/
  * Follow these steps for deployment:
-   * heroku login -i
-   * heroku create
-   * git push heroku master
+   * `heroku login -i`
+   * `heroku create`
+   * `git push heroku master`
 * Navigate to your newly created Heroku site.
   * Add secret keys from development.env by going to https://dashboard.heroku.com/apps
   * Click into your app > Settings > Config Vars > Reveal Config Vars > Add key value pairs for each variable.

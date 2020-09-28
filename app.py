@@ -10,7 +10,6 @@ import sys
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
-import spoonacular
 
 #env
 dotenv_path = join(dirname(__file__), 'development.env')

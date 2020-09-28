@@ -11,14 +11,20 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+    <img src=https://pbs.twimg.com/profile_images/1308010958862905345/-SGZioPb_400x400.jpg width="30" height="30" class="d-inline-block align-top" alt="heading" loading="lazy">
+    Twittsplay
+  </a>
+</nav>
     <div class="center">
     <div class="card mb-3" style="max-width: 1000px;">
         <div class="card-header">
             Random Dessert Chosen: "{{randomDessert}}"
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{text}}</h5>
-            <p class="card-text">Tweeted by @{{screen_name}} at {{created_at}}</p>
+            <h5 class="card-title text-info">"{{text}}"</h5>
+            <p class="card-text "><i>Tweeted by @{{screen_name}} at {{created_at}}</i></p>
             <button class="btn btn-primary" onClick="window.location.reload();">Get a new dessert!</button>
         </div>
         <div class="card-footer text-muted">
@@ -33,7 +39,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{rec_title}}</h5>
+                    <h5 class="card-title text-info">{{rec_title}}</h5>
                         {% for ing in ing_data %}
                     <p class="card-text"><ul>{{ing["amount"]["us"]["value"]}} {{ing["amount"]["us"]["unit"]}}
                         {{ing["name"]}}</ul></p>

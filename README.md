@@ -45,7 +45,7 @@ INSTALLATION
 5. This app uses the Spoonacacular API and requires an API key with Rapid API
  * https://rapidapi.com/spoonacular/api/recipe-food-nutrition
  * Environment Variables
-  * SPOON_KEY
+   * SPOON_KEY
   
   
 **Once steps 1-5 have been completed, start the app by running: `python app.py`**

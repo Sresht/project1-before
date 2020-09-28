@@ -10,7 +10,7 @@ import sys
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
-import spoonacular as sp
+import spoonacular
 
 #env
 dotenv_path = join(dirname(__file__), 'development.env')
@@ -45,7 +45,7 @@ def index():
     
     #Spoonacular search info
     search_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search"
-    querystring = {"query":"cookies", "number":1}
+    querystring = {"query":randomDessert, "number":1}
     search_response = requests.request("GET", search_url, headers=headers, params=querystring)
     search_data=search_response.json()
     for rec in search_data["results"]:
@@ -53,14 +53,15 @@ def index():
         rec_title=rec["title"]
         rec_servings=rec["servings"]
         rec_prep_time=rec["readyInMinutes"]
-        rec_image=rec["image"]
+        rec_image="https://spoonacular.com/recipeImages/"+rec["image"]
         rec_url=rec["sourceUrl"]
-        #print(ing_id, ing_title, ing_servings, ing_prep_time, ing_url, ing_image)
+        #print(rec_id, rec_title, rec_servings, rec_prep_time, rec_url, rec_image)
     
     #Spoonacular ingredients by id info
     ing_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/"+str(rec_id)+"/ingredientWidget.json"
     ing_response = requests.request("GET", ing_url, headers=headers)
     ing_data=ing_response.json()
+    ing_len=len(ing_data["ingredients"])
     for ing in ing_data["ingredients"]:
         ing_name = ing["name"]
         ing_amount_value = ing["amount"]["us"]["value"]
@@ -86,7 +87,17 @@ def index():
         tweet = tweet,
         text = text,
         screen_name = screen_name,
-        created_at = created_at
+        created_at = created_at,
+        rec_id=rec_id,
+        rec_title=rec_title,
+        rec_servings=rec_servings,
+        rec_prep_time=rec_prep_time,
+        rec_image=rec_image,
+        rec_url=rec_url,
+        ing_name=ing_name,
+        ing_amount_unit=ing_amount_unit,
+        ing_amount_value=ing_amount_value,
+        ing_len=ing_len,
         )
 
 app.run(

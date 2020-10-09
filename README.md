@@ -1,3 +1,8 @@
+**The contents of this are unmodified and in the original state from the submission for Project 1 from one of my students (whose name has been redacted).
+I am using this as starter code to explain changes that I would make to restructure the code.
+Check out github.com/Sresht/project1-after for my version of this app (with the same functionality).**
+
+
 CONTENTS OF THIS FILE
 ---------------------
 
@@ -11,15 +16,13 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-Created and maintained by Jason Eccles jme5@njit.edu
-
 Twittsplay is an app that searches for a Tweet based on a randomly generated dessert and a recipe of that dessert. Twittsplay will display the dessert, the quote, the user, the date, and time. Twittsplay will also display the recipe title, prep time, ingredients, and a link to the recipe page. Clicking "Get a new dessert!", Twittsplay will search for a new dessert and display a new Tweet and recipe!
 
 
 INSTALLATION
 ------------
 
-**In order to get started please clone the repository by using: `git clone https://github.com/NJIT-CS490/project1-jme5`**
+**In order to get started please clone the repository by using: `git clone https://github.com/NJIT-CS490/project1-before`**
 
 
 1. This app requires Flask 

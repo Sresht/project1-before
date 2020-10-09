@@ -22,7 +22,7 @@ Twittsplay is an app that searches for a Tweet based on a randomly generated des
 INSTALLATION
 ------------
 
-**In order to get started please clone the repository by using: `git clone https://github.com/NJIT-CS490/project1-before`**
+**In order to get started please clone the repository by using: `git clone https://github.com/Sresht/project1-before`**
 
 
 1. This app requires Flask 
